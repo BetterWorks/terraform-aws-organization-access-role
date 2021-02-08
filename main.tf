@@ -16,9 +16,10 @@ data "aws_iam_policy_document" "assume_role" {
 
 # https://www.terraform.io/docs/providers/aws/r/iam_role.html
 resource "aws_iam_role" "default" {
-  name               = var.role_name
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
-  description        = "The role to grant permissions to this account to delegated IAM users in the master account"
+  name                 = var.role_name
+  assume_role_policy   = data.aws_iam_policy_document.assume_role.json
+  max_session_duration = var.max_session_duration
+  description          = "The role to grant permissions to this account to delegated IAM users in the master account"
 }
 
 # https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment.html

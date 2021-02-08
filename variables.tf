@@ -15,3 +15,9 @@ variable "policy_arn" {
   description = "Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account"
 }
 
+variable "max_session_duration" {
+  type        = string
+  default     = "14400"
+  description = "Max Session for assuming role"
+}
+
