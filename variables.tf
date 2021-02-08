@@ -17,7 +17,7 @@ variable "policy_arn" {
 
 variable "max_session_duration" {
   type        = string
-  default     = "14400"
+  default     = "28800"
   description = "Max Session for assuming role"
 }
 
